@@ -1,0 +1,14 @@
+# Node
+node_modules/
+dist/
+coverage/
+
+# Entorno
+.env
+.env.local
+.env.production
+
+# Logs y sistema
+*.log
+Thumbs.db
+.DS_Store

@@ -45,3 +45,25 @@ El guard del front solo oculta UI: la autorización real la valida el backend co
 
 Cuentas demo: `coordinador@syncpass.cl / Coord.2026` · `monitor@syncpass.cl / Monitor.2026` ·
 `asistente@syncpass.cl / Asist.2026`.
+
+## Pruebas y cobertura
+
+```powershell
+npm test
+npm run build
+npm run test:coverage
+```
+
+- **20 pruebas, 0 fallos** (7 archivos).
+- **50,29 % de líneas** (172/342), umbral 30 % en `vitest.config.ts`.
+- Reporte HTML: `coverage/index.html`.
+
+Detalle: [docs/pruebas-web.md](docs/pruebas-web.md).
+
+## Documentación
+
+- [Arquitectura del panel](docs/arquitectura-web.md)
+- [Vistas y navegación](docs/vistas-web.md)
+- [Demo del panel](docs/demo-web.md)
+- [Pruebas y cobertura](docs/pruebas-web.md)
+- [Arquitectura y contrato del sistema](https://github.com/jorgeCisternasDev/syncpass-api/tree/main/docs)
