@@ -1,7 +1,19 @@
 # SyncPass Web
 
-Panel de coordinaci?n del caso CITT SyncPass: login, dashboard, usuarios y cat?logo.
+Panel de coordinación del caso CITT SyncPass: login, dashboard, usuarios y catálogo.
 Consume `syncpass-api`.
+
+## Sistema en línea (entrega 2026-11-24)
+
+| Pieza | URL o repositorio |
+| --- | --- |
+| Panel + API | <https://syncpass-production.up.railway.app> |
+| API | <https://syncpass-production.up.railway.app/api/health> |
+| App Android | [syncpass-mvp](https://github.com/jorgeCisternasDev/syncpass-mvp) |
+| Backend | [syncpass-api](https://github.com/jorgeCisternasDev/syncpass-api) |
+
+En producción el panel se sirve desde el mismo Spring Boot que la API; el build usa
+`VITE_API_URL=/api` y las peticiones quedan en el mismo origen.
 
 ## Stack
 
@@ -22,7 +34,9 @@ La URL de la API sale de `VITE_API_URL` (por defecto `http://localhost:8080/api`
 `VITE_API_URL` incluye la ruta `/api` y se lee en tiempo de build.
 
 - Desarrollo: copiar `.env.example` a `.env.local` y usar `http://localhost:8080/api`.
-- Build de producción: copiar `.env.production.example` a `.env.production`, cambiar la URL y ejecutar `npm run build`.
+- Build de producción: copiar `.env.production.example` a `.env.production` y usar
+  `VITE_API_URL=https://syncpass-production.up.railway.app/api`, o `VITE_API_URL=/api` si el panel
+  se sirve desde el mismo Spring Boot.
 - No se versionan secretos. La URL de la API no es un secreto, pero debe ser la del entorno correcto.
 
 ## Rutas
