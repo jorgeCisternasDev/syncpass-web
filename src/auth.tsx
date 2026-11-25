@@ -34,9 +34,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const logout = useCallback(async () => {
-    await api.logout()
+    // Lanza el logout remoto con el token actual y limpia la sesión local de inmediato.
+    const pending = api.logout()
     clearTokens()
     setUser(null)
+    await pending
   }, [])
 
   const hasRole = useCallback(
