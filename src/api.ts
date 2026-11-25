@@ -154,6 +154,9 @@ export interface SessionUser {
 export function decodeSession(token: string): SessionUser | null {
   try {
     const payload = JSON.parse(atob(token.split('.')[1]))
+    if (typeof payload.exp === 'number' && payload.exp * 1000 <= Date.now()) {
+      return null
+    }
     return {
       id: payload.sub ?? '',
       email: payload.email ?? '',

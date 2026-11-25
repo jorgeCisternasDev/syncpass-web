@@ -14,7 +14,14 @@ const AuthContext = createContext<AuthContextValue | null>(null)
 
 function readUser(): SessionUser | null {
   const token = getToken()
-  return token ? decodeSession(token) : null
+  if (!token) {
+    return null
+  }
+  const user = decodeSession(token)
+  if (!user) {
+    clearTokens()
+  }
+  return user
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {

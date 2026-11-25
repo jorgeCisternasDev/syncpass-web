@@ -68,8 +68,8 @@ npm run build
 npm run test:coverage
 ```
 
-- **20 pruebas, 0 fallos** (7 archivos).
-- **50,29 % de líneas** (172/342), umbral 30 % en `vitest.config.ts`.
+- **22 pruebas, 0 fallos** (8 archivos).
+- **51 % de líneas** (178/349), umbral 30 % en `vitest.config.ts`.
 - Reporte HTML: `coverage/index.html`.
 
 Detalle: [docs/pruebas-web.md](docs/pruebas-web.md).
