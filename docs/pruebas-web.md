@@ -10,18 +10,18 @@ npm run test:coverage
 
 | Comando | Resultado |
 | --- | --- |
-| `npm test` | **20 pruebas, 0 fallos** (7 archivos) |
+| `npm test` | **22 pruebas, 0 fallos** (8 archivos) |
 | `npm run build` | `tsc --noEmit` + Vite OK |
-| `npm run test:coverage` | **50,29 % de líneas**, umbral 30 % |
+| `npm run test:coverage` | **51 % de líneas**, umbral 30 % |
 
 ## Cobertura
 
 | Métrica | Cubierto / total | Porcentaje |
 | --- | --- | --- |
-| Sentencias | 182 / 366 | **49,72 %** |
-| Ramas | 109 / 237 | **45,99 %** |
+| Sentencias | 188 / 373 | **50,4 %** |
+| Ramas | 114 / 243 | **46,91 %** |
 | Funciones | 53 / 131 | **40,45 %** |
-| Líneas | 172 / 342 | **50,29 %** |
+| Líneas | 178 / 349 | **51 %** |
 
 Umbral de 30 % configurado en `vitest.config.ts`; la corrida pasa.
 
